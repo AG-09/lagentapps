@@ -1,0 +1,24 @@
+name: nova_voice
+description: On-device voice assistant prototype (Gemma 3 270M, STT, TTS).
+publish_to: none
+version: 0.1.0
+
+environment:
+  sdk: ">=3.4.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_gemma: any        # on-device LLM runtime (LiteRT); pin after first successful build
+  sherpa_onnx: any          # offline STT (Zipformer 20M) + TTS (Piper), one small engine
+  record: ^6.0.0            # microphone stream for STT
+  audioplayers: ^6.1.0      # plays the generated voice
+  path_provider: ^2.1.4
+  http: ^1.2.2              # one-time voice pack download
+  archive: ^4.0.0           # unpacks the voice pack
+  file_picker: ^8.1.0       # pick the model file and the avatar image/GIF
+  shared_preferences: ^2.3.0
+  google_fonts: ^6.2.1      # Source Serif 4, Inter, JetBrains Mono
+
+flutter:
+  uses-material-design: true
